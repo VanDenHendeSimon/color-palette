@@ -11,10 +11,12 @@ export const Header = () => {
       <div className="c-header__numeric-inputs">
         <NumericInput value={amountOfColors} label="Colors" setter={setAmountOfColors} />
         <NumericInput value={amountOfVariations} label="Variations" setter={setAmountOfVariations} />
-        <input className="c-input" type="button" value="test" onClick={() => {console.log(amountOfColors, amountOfVariations)}} />
       </div>
       <div></div>
-      <div></div>
+      <div className="c-header__buttons">
+        <input className="c-input" type="button" value="Generate" onClick={() => { console.log(amountOfColors, amountOfVariations); }} />
+        <input className="c-input" type="button" value="Export" onClick={() => { console.log(amountOfColors, amountOfVariations); }} />
+      </div>
     </header>
   );
 };
