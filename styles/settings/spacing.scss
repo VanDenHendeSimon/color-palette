@@ -1,0 +1,11 @@
+$baseline: 8px;
+
+$whitespace: (
+  'xs': $baseline * 0.5,
+  'sm': $baseline * 1,
+  'md': $baseline * 2,
+  'normal': $baseline * 3,
+  'lg': $baseline * 4,
+  'xl': $baseline * 5,
+  'xxl': $baseline * 6,
+);

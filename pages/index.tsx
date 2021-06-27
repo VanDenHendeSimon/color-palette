@@ -1,11 +1,11 @@
-import { PageLayout } from '../components/Layout/PageLayout';
+import { Header } from '../components/Header';
 import { SEO } from '../components/SEO';
 
 export default function Index() {
   return (
     <div>
       <SEO titleSuffix={"| 🏡"} />
-      <h1>Palette 🎨</h1>
+      <Header />
     </div>
   );
 }
