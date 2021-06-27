@@ -1,0 +1,13 @@
+.c-numeric-input {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    margin-right: map-get($map: $whitespace, $key: 'sm');
+  }
+
+  &__input {
+    max-width: 2.5rem;
+    line-height: 1.5rem;
+  }
+}

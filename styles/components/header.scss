@@ -1,3 +1,8 @@
 .c-header {
   padding: map-get($map: $whitespace, $key: 'md') map-get($map: $whitespace, $key: 'normal');
+
+  &__numeric-inputs {
+    display: flex;
+    gap: map-get($map: $whitespace, $key: 'md');
+  }
 }

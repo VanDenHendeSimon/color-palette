@@ -1,0 +1,28 @@
+.c-input {
+  border: 1px solid map-get($map: $colors-alpha, $key: '100');
+  border-radius: map-get($map: $whitespace, $key: 'sm');
+  padding: map-get($map: $whitespace, $key: 'sm') map-get($map: $whitespace, $key: 'md');
+  transition: map-get($map: $transitions, $key: 'alpha');
+
+  &:hover,
+  &:focus {
+    border-color: map-get($map: $colors-alpha, $key: '200');
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px map-get($map: $colors-alpha-opaque, $key: '400');
+  }
+
+  &[type=button] {
+    background-color: map-get($map: $colors-alpha, $key: '100');
+    border-color: map-get($map: $colors-alpha, $key: '300');
+    padding: map-get($map: $whitespace, $key: 'sm') map-get($map: $whitespace, $key: 'md');
+
+    &:hover,
+    &:focus {
+      background-color: map-get($map: $colors-alpha, $key: '300');
+      color: map-get($map: $colors-neutral, $key: '200');
+      cursor: pointer;
+    }
+  }
+}
