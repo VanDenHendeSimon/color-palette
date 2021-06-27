@@ -1,6 +1,7 @@
 .c-input {
-  border: 1px solid map-get($map: $colors-alpha, $key: '100');
+  line-height: 1.5rem;
   border-radius: map-get($map: $whitespace, $key: 'sm');
+  border: 1px solid map-get($map: $colors-alpha, $key: '100');
   padding: map-get($map: $whitespace, $key: 'sm') map-get($map: $whitespace, $key: 'md');
   transition: map-get($map: $transitions, $key: 'alpha');
 
