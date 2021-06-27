@@ -1,0 +1,60 @@
+$colors-neutral: (
+  '000': var(--color-neutral-000),
+  '100': var(--color-neutral-100),
+	'200': var(--color-neutral-200),
+	'300': var(--color-neutral-300),
+	'400': var(--color-neutral-400),
+	'500': var(--color-neutral-500),
+	'600': var(--color-neutral-600),
+	'700': var(--color-neutral-700),
+	'800': var(--color-neutral-800),
+	'900': var(--color-neutral-900),
+	'1000': var(--color-neutral-1000),
+);
+
+$colors-alpha: (
+	'100': var(--color-alpha-100),
+	'200': var(--color-alpha-200),
+	'300': var(--color-alpha-300),
+	'400': var(--color-alpha-400),
+	'500': var(--color-alpha-500),
+	'600': var(--color-alpha-600),
+	'700': var(--color-alpha-700),
+	'800': var(--color-alpha-800),
+	'900': var(--color-alpha-900),
+	'1000': var(--color-alpha-1000),
+);
+
+$colors-beta: (
+	'100': var(--color-beta-100),
+	'200': var(--color-beta-200),
+	'300': var(--color-beta-300),
+	'400': var(--color-beta-400),
+	'500': var(--color-beta-500),
+	'600': var(--color-beta-600),
+	'700': var(--color-beta-700),
+	'800': var(--color-beta-800),
+	'900': var(--color-beta-900),
+	'1000': var(--color-beta-1000),
+);
+
+$colors-gamma: (
+  '100': var(--color-gamma-100),
+	'200': var(--color-gamma-200),
+	'300': var(--color-gamma-300),
+	'400': var(--color-gamma-400),
+	'500': var(--color-gamma-500),
+	'600': var(--color-gamma-600),
+	'700': var(--color-gamma-700),
+	'800': var(--color-gamma-800),
+	'900': var(--color-gamma-900),
+	'1000': var(--color-gamma-1000),
+);
+
+$colors-page: (
+	'text': var(--page-colors-text),
+	'background': var(--page-colors-background),
+);
+
+$color-good: #399b62;
+$color-bad: #9b3939;

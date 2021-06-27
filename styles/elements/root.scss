@@ -1,0 +1,56 @@
+:root {
+  --color-neutral-000: #fbfafb;
+  --color-neutral-100: #f4f1f8;
+	--color-neutral-200: #eae9ec;
+	--color-neutral-300: #dbdadd;
+	--color-neutral-400: #afacb3;
+	--color-neutral-500: #8e8c90;
+	--color-neutral-600: #737175;
+	--color-neutral-700: #3f3d42;
+	--color-neutral-800: #200842;
+	--color-neutral-900: #16042e;
+	--color-neutral-1000: #120426;
+  
+  --color-alpha-100: #B7A2D3;
+	--color-alpha-200: #987AC0;
+	--color-alpha-300: #7C57AE;
+	--color-alpha-400: #63399B;
+	--color-alpha-500: #4D2089;
+	--color-alpha-600: #401875;
+	--color-alpha-700: #331262;
+	--color-alpha-800: #280C4E;
+	--color-alpha-900: #1D073A;
+	--color-alpha-1000: #120426;
+
+	--color-beta-100: #D3CFA2;
+	--color-beta-200: #C1BB7A;
+	--color-beta-300: #AEA757;
+	--color-beta-400: #9C9439;
+	--color-beta-500: #898120;
+	--color-beta-600: #756E19;
+	--color-beta-700: #625B12;
+	--color-beta-800: #4E480C;
+	--color-beta-900: #3A3607;
+	--color-beta-1000: #262304;
+
+  --color-gamma-100: #A2BED3;
+	--color-gamma-200: #7AA3C0;
+	--color-gamma-300: #5789AE;
+	--color-gamma-400: #39729B;
+	--color-gamma-500: #205D89;
+	--color-gamma-600: #184E75;
+	--color-gamma-700: #124062;
+	--color-gamma-800: #0C324E;
+	--color-gamma-900: #07253A;
+	--color-gamma-1000: #041826;
+
+  --page-colors-text: var(--color-neutral-800);
+  --page-colors-background: var(--color-neutral-000);
+}
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --page-colors-text: var(--color-neutral-000);
+    --page-colors-background: var(--color-neutral-900);
+  }
+}

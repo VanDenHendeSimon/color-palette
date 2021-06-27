@@ -1,0 +1,6 @@
+body,
+html {
+	font: 14px $font-stack-alpha;
+	color: map-get($colors-page, 'text');
+	background: map-get($colors-page, 'background');
+}
