@@ -13,8 +13,8 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
   return (
     <header className="c-header">
       <div className="c-header__numeric-inputs">
-        <NumericInput value={amountOfColors} label="Colors" setter={setAmountOfColors} trigger={generatePalette} />
-        <NumericInput value={amountOfVariations} label="Variations" setter={setAmountOfVariations} trigger={generatePalette} />
+        <NumericInput value={amountOfColors} label="Colors" setter={setAmountOfColors} />
+        <NumericInput value={amountOfVariations} label="Variations" setter={setAmountOfVariations} />
       </div>
       <div></div>
       <div className="c-header__buttons">
