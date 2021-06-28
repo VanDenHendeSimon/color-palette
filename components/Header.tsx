@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { NumericInput } from './NumericInput';
 
 export const Header = () => {

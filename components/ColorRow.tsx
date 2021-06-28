@@ -2,7 +2,6 @@ import React from 'react'
 import { Color } from '../models/ColorPalette';
 
 export const ColorRow = ({colorSet}: {colorSet: Array<Color>}) => {
-  console.log(colorSet);
   return (
     <div className="c-colorvisualiser__row">
       {
