@@ -93,8 +93,6 @@ export default function Index() {
   };
 
   const generatePalette = (amountOfColors: number, amountOfVariations: number): void => {
-    console.log(`Generating Color Palette with ${amountOfColors} colors each having ${amountOfVariations} variations`);
-
     const colors = getColorsFromScheme(amountOfColors);
 
     let newPalette: ColorPalette = {
