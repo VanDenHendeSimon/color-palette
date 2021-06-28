@@ -3,49 +3,11 @@ import { ColorVisualiser } from '../components/ColorVisualiser';
 import { Header } from '../components/Header';
 import { SEO } from '../components/SEO';
 import { Color, ColorPalette } from '../models/ColorPalette';
-import { colorHarmonies, getAnalogueSchemeFromColor, getComplementarySchemeFromColor, getSplitComplementarySchemeFromColor, getSquareSchemeFromColor, getTetradicSchemeFromColor, getTriadSchemeFromColor } from '../utils/colorSchemes';
+import { colorHarmonies, getAnalogueSchemeFromColor } from '../utils/colorSchemes';
 
 export default function Index() {
 
-  const [colorPalette, setColorPalette] = useState<ColorPalette>({
-    colors: [
-      [
-        {
-          hex: "#FF0000",
-          hsl: [0, 1, 1],
-          rgb: [255, 0, 0],
-        },
-        {
-          hex: "#00FF00",
-          hsl: [30, 1, 1],
-          rgb: [0, 255, 0],
-        },
-        {
-          hex: "#0000FF",
-          hsl: [90, 1, 1],
-          rgb: [0, 0, 255],
-        },
-      ],
-      [
-        {
-          hex: "#550000",
-          hsl: [0, 1, 1],
-          rgb: [255, 0, 0],
-        },
-        {
-          hex: "#005500",
-          hsl: [30, 1, 1],
-          rgb: [0, 255, 0],
-        },
-        {
-          hex: "#000055",
-          hsl: [90, 1, 1],
-          rgb: [0, 0, 255],
-        },
-      ],
-    ]
-  });
-
+  const [colorPalette, setColorPalette] = useState<ColorPalette>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const lightnessRange = [0.1, 0.96];
