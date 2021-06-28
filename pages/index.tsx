@@ -6,6 +6,45 @@ import { Color, ColorPalette } from '../models/ColorPalette';
 
 export default function Index() {
 
+  const [colorPalette, setColorPalette] = useState<ColorPalette>({
+    colors: [
+      [
+        {
+          hex: "#FF0000",
+          hsl: [0, 1, 1],
+          rgb: [255, 0, 0],
+        },
+        {
+          hex: "#00FF00",
+          hsl: [30, 1, 1],
+          rgb: [0, 255, 0],
+        },
+        {
+          hex: "#0000FF",
+          hsl: [90, 1, 1],
+          rgb: [0, 0, 255],
+        },
+      ],
+      [
+        {
+          hex: "#550000",
+          hsl: [0, 1, 1],
+          rgb: [255, 0, 0],
+        },
+        {
+          hex: "#005500",
+          hsl: [30, 1, 1],
+          rgb: [0, 255, 0],
+        },
+        {
+          hex: "#000055",
+          hsl: [90, 1, 1],
+          rgb: [0, 0, 255],
+        },
+      ],
+    ]
+  });
+
   const lightnessRange = [0.1, 0.9];
   const saturationRange = [0.3, 1];
 
@@ -83,45 +122,6 @@ export default function Index() {
     let newPalette : ColorPalette = {colors: [variations, variations, variations]};
     setColorPalette(newPalette);
   }
-
-  const [colorPalette, setColorPalette] = useState<ColorPalette>({
-    colors: [
-      [
-        {
-          hex: "#FF0000",
-          hsl: [0, 1, 1],
-          rgb: [255, 0, 0],
-        },
-        {
-          hex: "#00FF00",
-          hsl: [30, 1, 1],
-          rgb: [0, 255, 0],
-        },
-        {
-          hex: "#0000FF",
-          hsl: [90, 1, 1],
-          rgb: [0, 0, 255],
-        },
-      ],
-      [
-        {
-          hex: "#550000",
-          hsl: [0, 1, 1],
-          rgb: [255, 0, 0],
-        },
-        {
-          hex: "#005500",
-          hsl: [30, 1, 1],
-          rgb: [0, 255, 0],
-        },
-        {
-          hex: "#000055",
-          hsl: [90, 1, 1],
-          rgb: [0, 0, 255],
-        },
-      ],
-    ]
-  });
 
   return (
     <div className="c-app">
