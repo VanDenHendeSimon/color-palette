@@ -45,6 +45,8 @@ export default function Index() {
     ]
   });
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const lightnessRange = [0.1, 0.9];
   const saturationRange = [0.3, 1];
 
@@ -121,13 +123,14 @@ export default function Index() {
 
     let newPalette : ColorPalette = {colors: [variations, variations, variations]};
     setColorPalette(newPalette);
+    setIsLoading(false);
   }
 
   return (
     <div className="c-app">
       <SEO titleSuffix={"| 🏡"} />
       <Header generator={generatePalette} />
-      <ColorVisualiser colorPalette={colorPalette} />
+      {isLoading ? <div>loading...</div> : <ColorVisualiser colorPalette={colorPalette} />}
     </div>
   );
 }

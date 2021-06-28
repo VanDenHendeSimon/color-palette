@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NumericInput } from './NumericInput';
 
 export const Header = ({ generator }: { generator: CallableFunction; }) => {
@@ -9,6 +9,10 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
   const generatePalette = (): void => {
     generator(amountOfColors, amountOfVariations);
   };
+
+  useEffect(() => {
+    generatePalette();
+  }, []);
 
   return (
     <header className="c-header">
