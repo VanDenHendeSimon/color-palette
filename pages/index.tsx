@@ -47,15 +47,11 @@ export default function Index() {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const lightnessRange = [0.1, 0.9];
+  const lightnessRange = [0.1, 0.96];
   const saturationRange = [0.3, 1];
 
-  const getRandomColor = (): Color => {
-    return {
-      hex: "#FF0000",
-      hsl: [0, 1, 1],
-      rgb: [255, 0, 0]
-    };
+  const getRandomColor = (): number => {
+    return Math.random() * 360;
   };
 
   const convertHSLtoColor = (h: number, s: number, l: number): Color => {
@@ -92,7 +88,7 @@ export default function Index() {
     };
   };
 
-  const getVariations = (color: Color, amount: number): Array<Color> => {
+  const getVariations = (hue: number, amount: number): Array<Color> => {
     let variations: Array<Color> = [];
     for (let i = 0; i < amount; i++) {
       const lightnessBucket = [
@@ -106,9 +102,9 @@ export default function Index() {
       ];
 
       variations.push(convertHSLtoColor(
-        color.hsl[0],
-        lightnessBucket[0],
-        saturationBucket[0],
+        hue,
+        saturationBucket[0] + (i/amount) * (saturationBucket[1] - saturationBucket[0]),
+        lightnessBucket[0] + (i/amount) * (lightnessBucket[1] - lightnessBucket[0]),
       ));
     }
 
@@ -120,8 +116,8 @@ export default function Index() {
 
     let newPalette: ColorPalette = { colors: [] };
     for (let i = 0; i < amountOfColors; i++) {
-      const initialColor = getRandomColor();
-      const variations = getVariations(initialColor, amountOfVariations);
+      const color = getRandomColor();
+      const variations = getVariations(color, amountOfVariations);
       newPalette.colors.push(variations);
     }
 
