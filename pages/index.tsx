@@ -6,6 +6,10 @@ import { ColorPalette } from '../models/ColorPalette';
 
 export default function Index() {
 
+  const generatePalette = (amountOfColors: number, amountOfVariations: number) : void => {
+    console.log(`Generating Color Palette with ${amountOfColors} colors each having ${amountOfVariations} variations`);
+  }
+
   const [colorPalette, setColorPalette] = useState<ColorPalette>({
     colors: [
       [
@@ -48,7 +52,7 @@ export default function Index() {
   return (
     <div className="c-app">
       <SEO titleSuffix={"| 🏡"} />
-      <Header />
+      <Header generator={generatePalette} />
       <ColorVisualiser colorPalette={colorPalette} />
     </div>
   );
