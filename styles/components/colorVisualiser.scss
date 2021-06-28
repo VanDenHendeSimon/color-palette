@@ -1,0 +1,38 @@
+.c-colorvisualiser {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__row {
+    height: 100%;
+    display: flex;
+  }
+
+  &__col {
+    width: 100%;
+    padding: map-get($map: $whitespace, $key: 'md');
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .c-colorvisualiser__label {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+
+  &__label {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+    transition: map-get($map: $transitions, $key: 'alpha');
+
+    padding: map-get($map: $whitespace, $key: 'md');
+    background-color: map-get($map: $colors-alpha, $key: '000');
+    border-radius: map-get($map: $whitespace, $key: 'sm');
+    text-align: center;
+  }
+}
