@@ -3,6 +3,7 @@ import { ColorVisualiser } from '../components/ColorVisualiser';
 import { Header } from '../components/Header';
 import { SEO } from '../components/SEO';
 import { Color, ColorPalette } from '../models/ColorPalette';
+import { colorHarmonies, getAnalogueSchemeFromColor, getComplementarySchemeFromColor, getSplitComplementarySchemeFromColor, getSquareSchemeFromColor, getTetradicSchemeFromColor, getTriadSchemeFromColor } from '../utils/colorSchemes';
 
 export default function Index() {
 
@@ -103,23 +104,42 @@ export default function Index() {
 
       variations.push(convertHSLtoColor(
         hue,
-        saturationBucket[0] + (i/amount) * (saturationBucket[1] - saturationBucket[0]),
-        lightnessBucket[0] + (i/amount) * (lightnessBucket[1] - lightnessBucket[0]),
+        saturationBucket[0] + (i / amount) * (saturationBucket[1] - saturationBucket[0]),
+        lightnessBucket[0] + (i / amount) * (lightnessBucket[1] - lightnessBucket[0]),
       ));
     }
 
     return variations;
   };
 
+  const getRandomPropertyOfObject = (obj: any) => {
+    const keys = Object.keys(obj);
+    const randomKey = keys[keys.length * Math.random() << 0];
+    console.log(randomKey);
+
+    return obj[randomKey];
+  };
+
+  const getColorsFromScheme = (amountOfColors: number) => {
+    const possibleSchemes = colorHarmonies[amountOfColors - 2];
+    if (possibleSchemes !== undefined) {
+      const func = getRandomPropertyOfObject(possibleSchemes);
+      return func(getRandomColor(), amountOfColors);
+    }
+
+    return getAnalogueSchemeFromColor(getRandomColor(), amountOfColors);
+  };
+
   const generatePalette = (amountOfColors: number, amountOfVariations: number): void => {
     console.log(`Generating Color Palette with ${amountOfColors} colors each having ${amountOfVariations} variations`);
 
-    let newPalette: ColorPalette = { colors: [] };
-    for (let i = 0; i < amountOfColors; i++) {
-      const color = getRandomColor();
-      const variations = getVariations(color, amountOfVariations);
-      newPalette.colors.push(variations);
-    }
+    const colors = getColorsFromScheme(amountOfColors);
+
+    let newPalette: ColorPalette = {
+      colors: Array.apply(null, Array(amountOfColors)).map(
+        (_: any, i: number) => getVariations(colors && colors[i] ? colors[i] : getRandomColor(), amountOfVariations)
+      )
+    };
 
     setColorPalette(newPalette);
     setIsLoading(false);
