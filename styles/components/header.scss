@@ -2,6 +2,7 @@
   padding: map-get($map: $whitespace, $key: 'md') map-get($map: $whitespace, $key: 'normal');
   display: flex;
   justify-content: space-between;
+  background-color: map-get($map: $colors-alpha, $key: '000');
 
   &__numeric-inputs {
     display: flex;
