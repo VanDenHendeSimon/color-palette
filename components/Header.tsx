@@ -6,11 +6,11 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
 
   const [amountOfColors, setAmountOfColors] = useState<number>(3);
   const [amountOfVariations, setAmountOfVariations] = useState<number>(11);
-  const [scheme, setScheme] = useState<string>("");
+  const [colorPalette, setColorPalette] = useState<ColorPalette>();
 
   const generatePalette = (): void => {
     const palette: ColorPalette = generator(amountOfColors, amountOfVariations);
-    setScheme(palette.scheme);
+    setColorPalette(palette);
   };
 
   const exportPalette = () : void => {
@@ -28,7 +28,7 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
         <NumericInput value={amountOfVariations} label="Variations" setter={setAmountOfVariations} />
       </div>
       <div className="c-header__label">
-        {scheme}
+        {colorPalette?.scheme}
       </div>
       <div className="c-header__buttons">
         <input className="c-input" type="button" value="Generate" onClick={generatePalette} />
