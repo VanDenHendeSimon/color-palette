@@ -13,6 +13,10 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
     setScheme(palette.scheme);
   };
 
+  const exportPalette = () : void => {
+    console.log("Exporting");
+  }
+
   useEffect(() => {
     generatePalette();
   }, []);
@@ -28,7 +32,7 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
       </div>
       <div className="c-header__buttons">
         <input className="c-input" type="button" value="Generate" onClick={generatePalette} />
-        <input className="c-input" type="button" value="Export" onClick={() => { console.log("Exporting"); }} />
+        <input className="c-input" type="button" value="Export" onClick={exportPalette} />
       </div>
     </header>
   );
