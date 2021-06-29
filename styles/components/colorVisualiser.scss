@@ -41,7 +41,7 @@
 
   &__popup {
     padding: map-get($map: $whitespace, $key: 'sm') map-get($map: $whitespace, $key: 'md');
-    margin-bottom: map-get($map: $whitespace, $key: 'sm');
+    margin-bottom: map-get($map: $whitespace, $key: 'xs');
     font-size: 0.9rem;
     transform: scale(1, 1) translateY(100%);
 
