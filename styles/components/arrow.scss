@@ -1,0 +1,36 @@
+.c-arrow {
+  width: 0; 
+  height: 0;
+  margin-bottom: map-get($map: $whitespace, $key: 'sm');
+
+  --border-color: #{map-get($map: $colors-alpha, $key: '000')};
+  --size: #{map-get($map: $whitespace, $key: 'sm')};
+
+  &--up {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    
+    border-bottom: var(--size) solid var(--border-color);
+  }
+  
+  &--down {  
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    
+    border-top: var(--size) solid var(--border-color);
+  }
+  
+  &--right {
+    border-top: var(--size) solid transparent;
+    border-bottom: var(--size) solid transparent;
+    
+    border-left: var(--size) solid var(--border-color);
+  }
+  
+  &--left {
+    border-top: var(--size) solid transparent;
+    border-bottom: var(--size) solid transparent; 
+    
+    border-right: var(--size) solid var(--border-color); 
+  }
+}
