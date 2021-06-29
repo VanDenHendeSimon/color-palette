@@ -77,25 +77,31 @@ export default function Index() {
   const getRandomPropertyOfObject = (obj: any) => {
     const keys = Object.keys(obj);
     const randomKey = keys[keys.length * Math.random() << 0];
-    console.log(randomKey);
 
-    return obj[randomKey];
+    return {
+      key: randomKey,
+      func: obj[randomKey],
+    };
   };
 
-  const getColorsFromScheme = (amountOfColors: number) => {
+  const getScheme = (amountOfColors: number) => {
     const possibleSchemes = colorHarmonies[amountOfColors - 2];
-    if (possibleSchemes !== undefined) {
-      const func = getRandomPropertyOfObject(possibleSchemes);
-      return func(getRandomColor(), amountOfColors);
-    }
+    if (possibleSchemes !== undefined) return getRandomPropertyOfObject(possibleSchemes);
 
+    return undefined;
+  };
+
+  const getColorsFromScheme = (scheme: any, amountOfColors: number) => {
+    if (scheme !== undefined && scheme.func !== undefined) return scheme.func(getRandomColor(), amountOfColors);
     return getAnalogueSchemeFromColor(getRandomColor(), amountOfColors);
   };
 
-  const generatePalette = (amountOfColors: number, amountOfVariations: number): void => {
-    const colors = getColorsFromScheme(amountOfColors);
+  const generatePalette = (amountOfColors: number, amountOfVariations: number): ColorPalette => {
+    const scheme = getScheme(amountOfColors);
+    const colors = getColorsFromScheme(scheme, amountOfColors);
 
     let newPalette: ColorPalette = {
+      scheme: scheme && scheme.key ? scheme.key : "monochrome",
       colors: Array.apply(null, Array(amountOfColors)).map(
         (_: any, i: number) => getVariations(colors && colors[i] ? colors[i] : getRandomColor(), amountOfVariations)
       )
@@ -103,6 +109,7 @@ export default function Index() {
 
     setColorPalette(newPalette);
     setIsLoading(false);
+    return newPalette;
   };
 
   return (

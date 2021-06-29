@@ -5,5 +5,6 @@ export interface Color {
 }
 
 export interface ColorPalette {
-  colors: Array<Array<Color>>
+  colors: Array<Array<Color>>,
+  scheme: string,
 }
