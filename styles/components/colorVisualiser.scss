@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
 
     &:hover {
       cursor: pointer;
@@ -25,7 +26,7 @@
     }
   }
 
-  &__label {
+  &__text {
     opacity: 0;
     transform: scale(0.5, 0.5);
     transition: map-get($map: $transitions, $key: 'alpha');
@@ -34,5 +35,19 @@
     background-color: map-get($map: $colors-alpha, $key: '000');
     border-radius: map-get($map: $whitespace, $key: 'sm');
     text-align: center;
+
+    margin: 0;
+  }
+
+  &__popup {
+    padding: map-get($map: $whitespace, $key: 'sm') map-get($map: $whitespace, $key: 'md');
+    margin-bottom: map-get($map: $whitespace, $key: 'xs');
+    font-size: 0.9rem;
+    transform: scale(1, 1) translateY(100%);
+
+    &--show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

@@ -39,10 +39,14 @@ export default function Index() {
       r = c; g = 0; b = x;
     }
 
+    r = Math.round((r + m) * 255);
+    g = Math.round((g + m) * 255);
+    b = Math.round((b + m) * 255);
+
     // Having obtained RGB, convert channels to hex
-    let rString = Math.round((r + m) * 255).toString(16).padStart(2, '0');
-    let gString = Math.round((g + m) * 255).toString(16).padStart(2, '0');
-    let bString = Math.round((b + m) * 255).toString(16).padStart(2, '0');
+    let rString = r.toString(16).padStart(2, '0');
+    let gString = g.toString(16).padStart(2, '0');
+    let bString = b.toString(16).padStart(2, '0');
 
     return {
       hsl: [h, s, l],
