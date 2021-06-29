@@ -100,3 +100,5 @@ $color-gamma: (
 ## Screenshot
 ![Screenshot 1](https://kleurtjes.netlify.app/screenshot_1.png)
 ![Screenshot 2](https://kleurtjes.netlify.app/screenshot_2.png)
+![Screenshot 3](https://kleurtjes.netlify.app/screenshot_3.png)
+![Screenshot 4](https://kleurtjes.netlify.app/screenshot_4.png)
