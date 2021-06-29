@@ -67,17 +67,17 @@ export const getSquareSchemeFromColor = (hue: number, amount?: number): Array<nu
 // https://www.tigercolor.com/color-lab/color-theory/color-harmonies.htm
 export const colorHarmonies = [
   {
-    "analogue": getAnalogueSchemeFromColor,
-    "complementary": getComplementarySchemeFromColor
+    "Analogue": getAnalogueSchemeFromColor,
+    "Complementary": getComplementarySchemeFromColor
   },
   {
-    "analogue": getAnalogueSchemeFromColor,
-    "split-complementary": getSplitComplementarySchemeFromColor,
-    "triadic": getTriadSchemeFromColor,
+    "Analogue": getAnalogueSchemeFromColor,
+    "Split Complementary": getSplitComplementarySchemeFromColor,
+    "Triadic": getTriadSchemeFromColor,
   },
   {
-    "analogue": getAnalogueSchemeFromColor,
-    "tetradic": getTetradicSchemeFromColor,
-    "square": getSquareSchemeFromColor,
+    "Analogue": getAnalogueSchemeFromColor,
+    "Tetradic": getTetradicSchemeFromColor,
+    "Square": getSquareSchemeFromColor,
   }
 ];
