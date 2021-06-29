@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { ColorPalette } from '../models/ColorPalette';
 import { NumericInput } from './NumericInput';
 
 export const Header = ({ generator }: { generator: CallableFunction; }) => {
 
   const [amountOfColors, setAmountOfColors] = useState<number>(3);
   const [amountOfVariations, setAmountOfVariations] = useState<number>(11);
+  const [scheme, setScheme] = useState<string>("");
 
   const generatePalette = (): void => {
-    generator(amountOfColors, amountOfVariations);
+    const palette: ColorPalette = generator(amountOfColors, amountOfVariations);
+    setScheme(palette.scheme);
   };
 
   useEffect(() => {
@@ -20,7 +23,9 @@ export const Header = ({ generator }: { generator: CallableFunction; }) => {
         <NumericInput value={amountOfColors} label="Colors" setter={setAmountOfColors} />
         <NumericInput value={amountOfVariations} label="Variations" setter={setAmountOfVariations} />
       </div>
-      <div></div>
+      <div className="c-header__label">
+        {scheme}
+      </div>
       <div className="c-header__buttons">
         <input className="c-input" type="button" value="Generate" onClick={generatePalette} />
         <input className="c-input" type="button" value="Export" onClick={() => { console.log("Exporting"); }} />

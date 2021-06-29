@@ -13,4 +13,10 @@
     display: flex;
     gap: map-get($map: $whitespace, $key: 'md');
   }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
